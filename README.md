@@ -114,6 +114,71 @@ If you prefer modifying your own firmware, you may find very thorough instructio
 ## Enabling native HiDPI display settings in macOS
 To enable native HiDPI settings in the Display Preferences of macOS, download and run the [one-key-hidpi](https://github.com/jlempen/one-key-hidpi) script and select the option `(1) 1920x1080 Display`.
 
+## Undervolting to reduce heat and improve performance
+There are two undervolting tools available for macOS:
+* [Volta](https://volta.garymathews.com)
+* [VoltageShift](https://github.com/sicreative/VoltageShift)
+
+The `VoltageShift.kext` is already included and enabled in this repository's `Kexts` folder. To be able to launch the `voltageshift` command line tool from anywhere, copy the [voltageshift executable](https://github.com/jlempen/Razer-Blade-15-Advanced-2019-RZ09-0301x-OpenCore/blob/main/Tools/VoltageShift/voltageshift) from the [Tools folder](https://github.com/jlempen/Razer-Blade-15-Advanced-2019-RZ09-0301x-OpenCore/tree/main/Tools) to your `/usr/local/bin` folder by entering `sudo cp voltageshift /usr/local/bin/` in the macOS terminal after navigating to the folder where you downloaded the `voltageshift` executable file.
+
+Please refer to the instructions found in the [VoltageShift repository](https://github.com/sicreative/VoltageShift), as well as to the excellent howto found in [zearp's repository](https://github.com/zearp/Nucintosh#undervolting).
+
+After running `voltageshift info`, it appears that Razer undervolted the Razer Blade 15 Advanced 2019 RZ09-0301x CPU and CPU cache by -102mV right from the factory! But perhaps it is possible to undervolt the machine even more. Every computer is different in this regard.
+
+### Undervolting in the UEFI BIOS
+While undervolting in macOS with `VoltageShift` works well, it is also possible to undervolt the Razer Blade directly in the UEFI BIOS. Undervolting in this way will permanently enable the voltage offsets to the computer itself and affect every operating system running on the computer.
+
+The instructions below were borrowed from [stonevil's repository](https://github.com/stonevil/Razer_Blade_Advanced_early_2019_Hackintosh/#undervolting).
+
+Our modified AMI BIOS provides a lot of different tools for undervolting and overclocking. The most interesting and easy to use are:
+* ``Processor``
+	* ``Core Voltage Offset``
+* ``GT``
+	* ``GT Voltage Offset``
+	* ``GTU Voltage Offset``
+* ``Uncore``
+	* ``Uncore Voltage Offset``
+
+`Processor` is obviously the CPU, `GT` and `GTU` represent the internal graphics card and `Uncore` is the CPU cache.
+
+To apply an undervolting configuration:
+* Reboot the computer
+* Repeatedly press the ``F1`` or ``DEL`` key to enter the UEFI BIOS setup
+* In the UEFI BIOS setup, navigate to the menu
+	* ``Advanced``
+		* ``Processor``
+			* Set ``Core Voltage Offset`` to 100
+			* Set ``Offset Prefix`` to ``-`` (!)
+		* ``GT``
+			* Set ``GT Voltage Offset`` to 100
+			* Set ``Offset Prefix`` to ``-`` (!)
+			* Set ``GTU Voltage Offset`` to 100
+			* Set ``Offset Prefix`` to ``-`` (!)
+		* ``Uncore``
+			* Set ``Uncore Voltage Offset`` to 60
+			* Set ``Offset Prefix`` to ``-`` (!)
+		* ``Memory``
+			* Set ``Memory Profile`` to the best profile for the installed memory. Usually it is something like ``XMP profile 1``
+	* ``Save and Exit``
+		* Hit ``Save Changes``
+		* Hit ``Save Changes and Reset``
+ 
+I would advise to test the values first in macOS with the `VoltageShift` tool and only set them in the UEFI BIOS when you found stable values.
+
+* Boot into macOS or Windows
+* Download and install the [Prime95](https://www.mersenne.org/download/) application
+* Run ``Torture Test...`` from the ``Options`` menu for at least one hour
+* If the system works reliably, repeat all the steps and incrementally increase the offsets by -5. It is recommended to use the same offsets for ``Processor`` and ``GT/GTU``. Repeat the ``Torture Test...``. If the system becomes unstable, freezes or reboots, revert back to the previous stable configuration.
+
+| Setting | Start offset | Recommended step | My stable offset |
+| ---: | ---: | ---: | ---: |
+| ``Processor Core Voltage Offset`` | -100 mV | -5 mV | -140 mV |
+| ``GT Core Voltage Offset`` | -100 mV | -5 mV | -140 mV |
+| ``GTU Core Voltage Offset`` | -100 mV | -5 mV | -140 mV |
+| ``Uncore Voltage Offset`` | -60 mV | -5 mV | -120 mV |
+
+CPU limitations can be very different from one machine to another, so do not use my configuration blindly.
+
 ## Related repositories
 * https://github.com/tylernguyen/razer15-hackintosh
 * https://github.com/stonevil/Razer_Blade_Advanced_early_2019_Hackintosh
