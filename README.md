@@ -8,14 +8,14 @@ The Razer Blade 15 Advanced (2019) RZ09-0301x is an almost perfect Hackintosh la
 ## Disclaimer
 This repository is neither a howto nor an installation manual. Using these files requires at least basic knowledge of [Acidanthera's OpenCore bootloader](https://github.com/acidanthera/OpenCorePkg), ACPI, UEFI and the art of hackintoshing in general. I recommend reading the excellent [Dortania's OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide), as well as all its linked resources.
 
-This EFI folder is based on [GitHub user tylernguyen's archived repository](https://github.com/tylernguyen/razer15-hackintosh). The SSDTs required to reliably disable the dGPU even after standby/sleep were borrowed from [GitHub user doubleyoustew](https://github.com/doubleyoustew/Razer-Blade-15/tree/master/Src/Hotpatches/dGPU) and the framebuffer patches needed to enable the 240Hz refresh rate were discovered by [reddit user sublime4116](https://www.reddit.com/r/hackintosh/comments/vz2lfq/comment/j223m0u/). 
+This EFI folder is based on [tylernguyen's archived repository](https://github.com/tylernguyen/razer15-hackintosh). The SSDTs required to reliably disable the dGPU even after standby/sleep were borrowed from [doubleyoustew](https://github.com/doubleyoustew/Razer-Blade-15/tree/master/Src/Hotpatches/dGPU) and the framebuffer patches needed to enable the 240Hz refresh rate were discovered by [reddit user sublime4116](https://www.reddit.com/r/hackintosh/comments/vz2lfq/comment/j223m0u/). 
 
 ## Recommendations
 I recommend completely erasing the device's SSD by creating a new GPT partition table before attempting to install macOS, as it makes the installation process much easier. You may use any Linux live ISO with a partitioning tool such as `GParted` or `KPartition` to erase the SSD.
 
 In order to boot macOS on the Razer Blade, the `Secure Boot` option needs to be _**disabled**_ in the BIOS.
 
-Furthermore, this EFI will only work with the modded firmware found in the [UEFI Firmware folder](https://github.com/jlempen/Razer-Blade-15-Advanced-2019-RZ09-0301x-OpenCore/tree/main/UEFI%20Firmware). Instructions on how to flash the modded firmware may be found [in this readme](https://github.com/jlempen/Razer-Blade-15-Advanced-2019-RZ09-0301x-OpenCore/tree/main/UEFI%20Firmware). macOS will only boot successfully after flashing the modded firmware and seting the required options as described in [UEFI BIOS Configuration](https://github.com/jlempen/Razer-Blade-15-Advanced-2019-RZ09-0301x-OpenCore#uefi-bios-configuration).
+Furthermore, this EFI will only work with the modified firmware found in the [UEFI Firmware folder](https://github.com/jlempen/Razer-Blade-15-Advanced-2019-RZ09-0301x-OpenCore/tree/main/UEFI%20Firmware). Instructions on how to flash the modified firmware may be found [in this readme](https://github.com/jlempen/Razer-Blade-15-Advanced-2019-RZ09-0301x-OpenCore/tree/main/UEFI%20Firmware). macOS will only boot successfully after flashing the modified firmware and changing the required settings as described in [UEFI BIOS Configuration](https://github.com/jlempen/Razer-Blade-15-Advanced-2019-RZ09-0301x-OpenCore#uefi-bios-configuration).
 
 Please be aware that all `PlatformInfo` and `SMBIOS` information was removed from the OpenCore `config.plist` files. Users will therefore need to generate their own `PlatformInfo` with [CorpNewt's GenSMBIOS tool](https://github.com/corpnewt/GenSMBIOS) before attempting to boot a Razer Blade 15 Advanced (2019) RZ09-0301x with this repository's EFI folder.
 
@@ -25,7 +25,7 @@ Please be aware that all `PlatformInfo` and `SMBIOS` information was removed fro
 | Target OS        | Apple macOS 13.3 Ventura |
 | OpenCore         | [OC v0.9.7](https://github.com/acidanthera/OpenCorePkg/releases/download/0.9.7/OpenCore-0.9.7-RELEASE.zip) |
 | SMBIOS           | MacBookPro16,1 |
-| UEFI Firmware    | v1.05 |
+| UEFI Firmware    | [Modified firmware v1.05](https://github.com/jlempen/Razer-Blade-15-Advanced-2019-RZ09-0301x-OpenCore/tree/main/UEFI%20Firmware) |
 | SSD format       | APFS file system, GPT partition table |
 
 ## Computer Specifications
@@ -69,10 +69,10 @@ Please be aware that all `PlatformInfo` and `SMBIOS` information was removed fro
 - [ ] HDMI and Mini DisplayPort outputs (hardwired to the NVIDIA dGPU)
 - [ ] Windows Hello IR camera
 
-## Modded UEFI Firmware
-In order to take advantage of better CPU power management and graphics acceleration, there are a few settings that need to be unlocked in the UEFI firmware. The most convenient way to achieve this is to flash the modded firmware found in the [UEFI Firmware folder](https://github.com/jlempen/Razer-Blade-15-Advanced-2019-RZ09-0301x-OpenCore/tree/main/UEFI%20Firmware). Instructions on how to flash the modded firmware may be found [in this readme](https://github.com/jlempen/Razer-Blade-15-Advanced-2019-RZ09-0301x-OpenCore/tree/main/UEFI%20Firmware).
+## Modified UEFI Firmware
+In order to take advantage of better CPU power management and graphics acceleration, there are a few settings that need to be unlocked and configured in the UEFI BIOS. The most convenient way to achieve this is to flash the modded firmware found in the [UEFI Firmware folder](https://github.com/jlempen/Razer-Blade-15-Advanced-2019-RZ09-0301x-OpenCore/tree/main/UEFI%20Firmware) and change the required settings in the UEFI BIOS as described below. Instructions on how to flash the modded firmware may be found [in this readme](https://github.com/jlempen/Razer-Blade-15-Advanced-2019-RZ09-0301x-OpenCore/tree/main/UEFI%20Firmware).
 
-Instructions on how to mod your own firmware may be found in [stonevil's excellent Razer Blade 15 Advanced early 2019 repository](https://github.com/stonevil/Razer_Blade_Advanced_early_2019_Hackintosh/#bios-unlock).
+If you prefer modifying your own firmware, you may find very thorough instructions in [stonevil's excellent Razer Blade 15 Advanced early 2019 repository](https://github.com/stonevil/Razer_Blade_Advanced_early_2019_Hackintosh/#bios-unlock).
 
 ## UEFI BIOS Configuration
 * Reboot computer
