@@ -116,7 +116,7 @@ If you prefer modifying your own firmware, you may find very thorough instructio
 To enable native HiDPI settings in the Display Preferences of macOS, download and run the [one-key-hidpi](https://github.com/jlempen/one-key-hidpi) script and select the option `(1) 1920x1080 Display`.
 
 ## Configuring the RGB color effects of the keyboard
-The RGB color effects of the keyboard may be managed and configured conveniently with the excellent [Razer macOS] utility.
+The RGB color effects of the keyboard may be managed and configured conveniently with the excellent [Razer macOS](https://github.com/1kc/razer-macos) utility.
 
 ## Undervolting to reduce heat and improve performance
 There are two undervolting tools available for macOS:
