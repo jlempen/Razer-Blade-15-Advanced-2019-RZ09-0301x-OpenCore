@@ -58,6 +58,7 @@ Please be aware that all `PlatformInfo` and `SMBIOS` information was removed fro
 - [x] Camera
 - [x] Internal speakers, microphone and Combojack (`AppleALC.kext`, `alcid=3`, `SSDT-ALC298.aml`, `SSDT-ALC298a.aml`)
 - [x] Keyboard with working brightness, volume and mute keys (internal USB header)
+- [x] Configurable RGB color effects for the keyboard
 - [x] Trackpad with native multi-touch gestures (`SSDT-I2CxConf.aml`, `SSDT-OCGPI0-GPHD.aml`, `SSDT-OCI2C-TPXX-RAZER15.aml`, `SSDT-XOSI.aml`, `VoodooI2C.kext`, `VoodooI2CHID.kext`)
 - [x] Battery percentage and cycle count (`SSDT-BATT-razer15-late2019.aml`, `VirtualSMC.kext`, `SMCBatteryManager.kext`)
 
@@ -113,6 +114,9 @@ If you prefer modifying your own firmware, you may find very thorough instructio
 
 ## Enabling native HiDPI display settings in macOS
 To enable native HiDPI settings in the Display Preferences of macOS, download and run the [one-key-hidpi](https://github.com/jlempen/one-key-hidpi) script and select the option `(1) 1920x1080 Display`.
+
+## Configuring the RGB color effects of the keyboard
+The RGB color effects of the keyboard may be managed and configured conveniently with the excellent [Razer macOS] utility.
 
 ## Undervolting to reduce heat and improve performance
 There are two undervolting tools available for macOS:
