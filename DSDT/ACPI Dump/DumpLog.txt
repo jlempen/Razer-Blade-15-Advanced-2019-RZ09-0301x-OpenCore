@@ -1,0 +1,86 @@
+24:222  23:291  Found UEFI Acpi 2.0 RSDP at 39b63000
+24:222  0:000  Saving ACPI tables from RSDP 39b63000 to ACPI\origin ...
+24:222  0:000   39b63000: 'RSD PTR ', Rev: 2 (Acpi 2.0 or newer), Len: 36 -> RSDP.aml
+24:492  0:269    (Xsdt: 39b630c0, Rsdt: 39b63028)
+24:492  0:000    39b630c0: 'XSDT', 'A M I', Rev: 1, Len: 260 -> XSDT.aml
+24:579  0:087    39b63028: 'RSDT', 'A M I', Rev: 1, Len: 148 -> RSDT.aml
+24:663  0:084    Tables in Xsdt: 28
+24:663  0:000    0. 39ba1e20: 'FACP', 'A M I', Rev: 6, Len: 276 -> FACP.aml
+24:751  0:087        (Dsdt: 39B63258, Facs: 3A0B4080, XDsdt: 39b63258, XFacs: 0)
+24:751  0:000        39b63258: 'DSDT', 'A M I', Rev: 2, Len: 256964 -> DSDT.aml
+24:910  0:158        3a0b4080: 'FACS', Ver: 2, Len: 64 -> FACS.aml
+24:999  0:089    1. 39ba1f38: 'APIC', 'A M I', Rev: 4, Len: 244 -> APIC.aml
+25:089  0:089    2. 39ba2030: 'FPDT', 'A M I', Rev: 1, Len: 68 -> FPDT.aml
+25:173  0:084    3. 39ba2078: 'FIDT', 'A M I', Rev: 1, Len: 156 -> FIDT.aml
+25:256  0:083    4. 39ba2118: 'MCFG', 'A M I', Rev: 1, Len: 60 -> MCFG.aml
+25:390  0:133    5. 39ba2158: 'SSDT', 'DptfTabl', Rev: 2, Len: 29535 -> SSDT-0-DptfTabl.aml
+25:500  0:110    6. 39ba94b8: 'SSDT', 'CpuSsdt', Rev: 2, Len: 7007 -> SSDT-1-CpuSsdt.aml (Found hidden SSDT 9 pcs)
+25:574  0:073        * 968131864: 'SSDT', 'Cpu0Ist', Rev: 2, Len: 1409  53 53 44 54 81 05 00 00 02 3C 50 6D 52 65 66 00 Internal length = 1409 -> SSDT-x1_0-Cpu0Ist.aml
+25:647  0:072        * 967901592: 'SSDT', 'ApIst', Rev: 2, Len: 1532  53 53 44 54 FC 05 00 00 02 23 50 6D 52 65 66 00 Internal length = 1532 -> SSDT-x1_1-ApIst.aml
+25:784  0:137        * 967893016: 'SSDT', 'Cpu0Cst', Rev: 2, Len: 1024  53 53 44 54 00 04 00 00 02 D9 50 6D 52 65 66 00 Internal length = 1024 -> SSDT-x1_2-Cpu0Cst.aml
+25:881  0:097        * 967903256: 'SSDT', 'ApCst', Rev: 2, Len: 778  53 53 44 54 0A 03 00 00 02 E9 50 6D 52 65 66 00 Internal length = 778 -> SSDT-x1_3-ApCst.aml
+25:979  0:097        * 938625048: 'SSDT', 'Cpu0Hwp', Rev: 2, Len: 329  53 53 44 54 49 01 00 00 02 51 50 6D 52 65 66 00 Internal length = 329 -> SSDT-x1_4-Cpu0Hwp.aml
+26:130  0:151        * 938631192: 'SSDT', 'ApHwp', Rev: 2, Len: 791  53 53 44 54 17 03 00 00 02 E3 50 6D 52 65 66 00 Internal length = 791 -> SSDT-x1_5-ApHwp.aml
+26:228  0:098        * 938565656: 'SSDT', 'HwpLvt', Rev: 2, Len: 1828  53 53 44 54 24 07 00 00 02 CA 50 6D 52 65 66 00 Internal length = 1828 -> SSDT-x1_6-HwpLvt.aml
+26:337  0:108        * 967901208: 'SSDT', 'Cpu0Psd', Rev: 2, Len: 244  53 53 44 54 F4 00 00 00 02 37 50 6D 52 65 66 00 Internal length = 244 -> SSDT-x1_7-Cpu0Psd.aml
+26:474  0:137        * 967897112: 'SSDT', 'ApPsd', Rev: 2, Len: 2736  53 53 44 54 B0 0A 00 00 02 AB 50 6D 52 65 66 00 Internal length = 2736 -> SSDT-x1_8-ApPsd.aml
+26:594  0:120  
+26:594  0:000    7. 39bab018: 'MSDM', 'A M I', Rev: 3, Len: 85 -> MSDM.aml
+26:696  0:101    8. 39bab070: 'SSDT', 'SaSsdt', Rev: 2, Len: 12742 -> SSDT-2-SaSsdt.aml
+26:820  0:124    9. 39bae238: 'SSDT', 'PegSsdt', Rev: 2, Len: 9648 -> SSDT-3-PegSsdt.aml
+26:913  0:092    10. 39bb07e8: 'HPET', 'A M I', Rev: 1, Len: 56 -> HPET.aml
+27:006  0:093    11. 39bb0820: 'SSDT', 'CflH_Tbt', Rev: 2, Len: 5097 -> SSDT-4-CflH_Tbt.aml
+27:099  0:092    12. 39bb1c10: 'SSDT', 'Ther_Rvp', Rev: 2, Len: 4014 -> SSDT-5-Ther_Rvp.aml
+27:203  0:104    13. 39bb2bc0: 'SSDT', 'xh_cfht4', Rev: 2, Len: 4788 -> SSDT-6-xh_cfht4.aml
+27:299  0:096    14. 39bb3e78: 'UEFI', 'A M I', Rev: 1, Len: 66 -> UEFI.aml
+27:410  0:110    15. 39bb3ec0: 'LPIT', 'A M I', Rev: 1, Len: 148 -> LPIT.aml
+27:540  0:129    16. 39bb3f58: 'SSDT', 'PtidDevc', Rev: 2, Len: 10206 -> SSDT-7-PtidDevc.aml
+27:662  0:122    17. 39bb6738: 'SSDT', 'TbtTypeC', Rev: 2, Len: 5224 -> SSDT-8-TbtTypeC.aml
+27:758  0:095    18. 39bb7ba0: 'DBGP', 'A M I', Rev: 1, Len: 52 -> DBGP.aml
+27:841  0:082    19. 39bb7bd8: 'DBG2', 'A M I', Rev: 0, Len: 97 -> DBG2.aml
+27:931  0:089    20. 39bb7c40: 'SSDT', 'UsbCTabl', Rev: 2, Len: 7015 -> SSDT-9-UsbCTabl.aml
+28:060  0:129    21. 39bb97a8: 'SSDT', 'ADebTabl', Rev: 2, Len: 324 -> SSDT-10-ADebTabl.aml
+28:170  0:109    22. 39bb98f0: 'SSDT', 'SgPeg', Rev: 2, Len: 174 -> SSDT-11-SgPeg.aml
+28:309  0:139    23. 39bb99a0: 'NHLT', 'EDK2', Rev: 0, Len: 45 -> NHLT.aml
+28:411  0:101    24. 39bb99d0: 'TPM2', 'A M I', Rev: 4, Len: 52 -> TPM2.aml
+28:519  0:108    25. 39bb9a08: 'BGRT', 'A M I', Rev: 1, Len: 56 -> BGRT.aml
+28:652  0:133    26. 39bb9a40: 'SSDT', 'OptTabl', Rev: 1, Len: 8603 -> SSDT-12-OptTabl.aml
+28:747  0:095    27. 39bbbbe0: 'WSMT', 'A M I', Rev: 1, Len: 40 -> WSMT.aml
+28:842  0:094  Found UEFI Acpi 1.0 RSDP at 39b63000
+28:842  0:000  Printing ACPI tables from RSDP 39b63000 ...
+28:842  0:000   39b63000: 'RSD PTR ', Rev: 2 (Acpi 2.0 or newer), Len: 36
+28:842  0:000    (Xsdt: 39b630c0, Rsdt: 39b63028)
+28:842  0:000    39b630c0: 'XSDT', 'A M I', Rev: 1, Len: 260
+28:842  0:000    39b63028: 'RSDT', 'A M I', Rev: 1, Len: 148
+28:842  0:000    Tables in Xsdt: 28
+28:842  0:000    0. 39ba1e20: 'FACP', 'A M I', Rev: 6, Len: 276
+28:842  0:000        (Dsdt: 39B63258, Facs: 3A0B4080, XDsdt: 39b63258, XFacs: 0)
+28:842  0:000        39b63258: 'DSDT', 'A M I', Rev: 2, Len: 256964
+28:847  0:004        3a0b4080: 'FACS', Ver: 2, Len: 64
+28:847  0:000    1. 39ba1f38: 'APIC', 'A M I', Rev: 4, Len: 244
+28:847  0:000    2. 39ba2030: 'FPDT', 'A M I', Rev: 1, Len: 68
+28:847  0:000    3. 39ba2078: 'FIDT', 'A M I', Rev: 1, Len: 156
+28:847  0:000    4. 39ba2118: 'MCFG', 'A M I', Rev: 1, Len: 60
+28:847  0:000    5. 39ba2158: 'SSDT', 'DptfTabl', Rev: 2, Len: 29535
+28:847  0:000    6. 39ba94b8: 'SSDT', 'CpuSsdt', Rev: 2, Len: 7007
+28:847  0:000    7. 39bab018: 'MSDM', 'A M I', Rev: 3, Len: 85
+28:847  0:000    8. 39bab070: 'SSDT', 'SaSsdt', Rev: 2, Len: 12742
+28:847  0:000    9. 39bae238: 'SSDT', 'PegSsdt', Rev: 2, Len: 9648
+28:847  0:000    10. 39bb07e8: 'HPET', 'A M I', Rev: 1, Len: 56
+28:847  0:000    11. 39bb0820: 'SSDT', 'CflH_Tbt', Rev: 2, Len: 5097
+28:847  0:000    12. 39bb1c10: 'SSDT', 'Ther_Rvp', Rev: 2, Len: 4014
+28:847  0:000    13. 39bb2bc0: 'SSDT', 'xh_cfht4', Rev: 2, Len: 4788
+28:847  0:000    14. 39bb3e78: 'UEFI', 'A M I', Rev: 1, Len: 66
+28:847  0:000    15. 39bb3ec0: 'LPIT', 'A M I', Rev: 1, Len: 148
+28:847  0:000    16. 39bb3f58: 'SSDT', 'PtidDevc', Rev: 2, Len: 10206
+28:847  0:000    17. 39bb6738: 'SSDT', 'TbtTypeC', Rev: 2, Len: 5224
+28:847  0:000    18. 39bb7ba0: 'DBGP', 'A M I', Rev: 1, Len: 52
+28:847  0:000    19. 39bb7bd8: 'DBG2', 'A M I', Rev: 0, Len: 97
+28:847  0:000    20. 39bb7c40: 'SSDT', 'UsbCTabl', Rev: 2, Len: 7015
+28:847  0:000    21. 39bb97a8: 'SSDT', 'ADebTabl', Rev: 2, Len: 324
+28:847  0:000    22. 39bb98f0: 'SSDT', 'SgPeg', Rev: 2, Len: 174
+28:847  0:000    23. 39bb99a0: 'NHLT', 'EDK2', Rev: 0, Len: 45
+28:847  0:000    24. 39bb99d0: 'TPM2', 'A M I', Rev: 4, Len: 52
+28:847  0:000    25. 39bb9a08: 'BGRT', 'A M I', Rev: 1, Len: 56
+28:847  0:000    26. 39bb9a40: 'SSDT', 'OptTabl', Rev: 1, Len: 8603
+28:847  0:000    27. 39bbbbe0: 'WSMT', 'A M I', Rev: 1, Len: 40
