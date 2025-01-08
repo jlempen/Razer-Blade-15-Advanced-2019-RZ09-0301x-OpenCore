@@ -9,7 +9,7 @@ The Razer Blade 15 Advanced (2019) RZ09-0301x is an almost perfect Hackintosh la
 > I recommend installing `macOS 13 Ventura` rather than the newer `macOS 14 Sonoma` or `macOS 15 Sequoia`. The Intel Wireless chips work almost perfectly with Apple's iServices and Continuity features on Ventura while those features are partially broken at the moment on newer versions of macOS. Moreover, `macOS 13 Ventura` is the last version of macOS to natively support Broadcom Wireless chips.
 
 > [!IMPORTANT]
-> For macOS to be able to boot on the Surface Laptop 3, the `Secure Boot` option _**must be disabled**_ in the UEFI BIOS.
+> For macOS to be able to boot on the Razer Blade, the `Secure Boot` option _**must be disabled**_ in the UEFI BIOS.
 
 ## Disclaimer
 This repository is neither a howto nor an installation manual. Using these files requires at least basic knowledge of [Acidanthera's OpenCore bootloader](https://github.com/acidanthera/OpenCorePkg), ACPI, UEFI and the art of hackintoshing in general. I recommend reading the excellent [Dortania's OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide), as well as all its linked resources.
