@@ -147,7 +147,7 @@ BrcmPatchRAM3.kext
 ```
 
 ## Configuring the RGB color effects of the keyboard
-The RGB color effects of the keyboard may be managed and configured conveniently with the excellent [Razer macOS](https://github.com/1kc/razer-macos) utility.
+The RGB color effects of the keyboard may be managed and configured conveniently with the excellent [Razer macOS](https://github.com/stickoking/razer-macos) utility.
 
 ## Undervolting to reduce heat and improve performance
 There are two undervolting tools available for macOS:
