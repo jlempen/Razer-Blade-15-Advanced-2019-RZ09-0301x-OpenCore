@@ -3,7 +3,17 @@
 # Razer-Blade-15-Advanced-2019-RZ09-0301x-OpenCore
 macOS on the Razer Blade 15 Advanced (2019) RZ09-0301x thanks to [Acidanthera's OpenCore bootloader](https://github.com/acidanthera/OpenCorePkg).
 
-The Razer Blade 15 Advanced (2019) RZ09-0301x is an almost perfect Hackintosh laptop. Its design is reminiscent of the trusty old 2006 17-Inch MacBook Pro once you remove all the ugly Intel, Razer and NVIDIA stickers from the palmrest. It sounds great with its 2 large speakers, the huge trackpad supports all the native gestures and feels like an Apple trackpad, the keyboard with its sexy RGB lighting is quite serviceable, the Razer Blade sleeps and wakes quickly and the battery holds around five hours under normal load.
+## Software Specifications
+| Software         | Version                            |
+| ---------------- | ---------------------------------- |
+| Target OS        | Apple macOS 13 Ventura, 14 Sonoma and 15 Sequoia |
+| OpenCore         | [MOD-OC v1.0.3](https://github.com/wjz304/OpenCore_NO_ACPI_Build/releases/download/1.0.3_20b758b/OpenCore-Mod-1.0.3-RELEASE.zip) |
+| SMBIOS           | MacBookPro16,1 |
+| UEFI Firmware    | [Modified firmware v1.05](https://github.com/jlempen/Razer-Blade-15-Advanced-2019-RZ09-0301x-OpenCore/tree/main/UEFI%20Firmware) |
+| SSD format       | APFS file system, GPT partition table |
+
+## Abstract
+The Razer Blade 15 Advanced (2019) RZ09-0301x is a perfect Hackintosh laptop. Its design is reminiscent of the trusty old 2006 17-Inch MacBook Pro once you remove all the ugly Intel, Razer and NVIDIA stickers from the palmrest. It sounds great with its 2 large speakers, the huge trackpad supports all the native gestures and feels like an Apple trackpad, the keyboard with its sexy RGB lighting is quite serviceable, the Razer Blade sleeps and wakes quickly and the battery holds around five hours under normal load.
 
 > [!TIP]
 > I recommend installing `macOS 13 Ventura` rather than the newer `macOS 14 Sonoma` or `macOS 15 Sequoia`. The Intel Wireless chips work almost perfectly with Apple's iServices and Continuity features on Ventura while those features are partially broken at the moment on newer versions of macOS. Moreover, `macOS 13 Ventura` is the last version of macOS to natively support Broadcom Wireless chips.
@@ -30,15 +40,6 @@ This EFI folder also contains all the kexts needed to enable various Broadcom-ba
 This repository uses the unofficial [OpenCore_NO_ACPI_Build fork of OpenCore by btwise](https://gitee.com/btwise/OpenCore_NO_ACPI), wich is not endorsed by Acidanthera (the dev team behind OpenCore). The main (and only) difference between this fork and the official OpenCore version is that it allows to prevent ACPI injection (e.g. patches, tables, boot parameters) into other OSes besides macOS.
 
 Windows and Linux should be detected automagically by the OpenCore boot loader even when installed after macOS.
-
-## Software Specifications
-| Software         | Version                            |
-| ---------------- | ---------------------------------- |
-| Target OS        | Apple macOS 13 Ventura, 14 Sonoma and 15 Sequoia |
-| OpenCore         | [MOD-OC v1.0.3](https://github.com/wjz304/OpenCore_NO_ACPI_Build/releases/download/1.0.3_20b758b/OpenCore-Mod-1.0.3-RELEASE.zip) |
-| SMBIOS           | MacBookPro16,1 |
-| UEFI Firmware    | [Modified firmware v1.05](https://github.com/jlempen/Razer-Blade-15-Advanced-2019-RZ09-0301x-OpenCore/tree/main/UEFI%20Firmware) |
-| SSD format       | APFS file system, GPT partition table |
 
 ## Computer Specifications
 | Device           | Hardware                           |
