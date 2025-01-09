@@ -25,6 +25,8 @@ Please be aware that all `PlatformInfo` and `SMBIOS` information was removed fro
 
 `AirportItlwm-Ventura.kext`, `AirportItlwm-Sonoma140.kext` and `AirportItlwm-Sonoma144.kext` from the [OpenIntelWireless repo](https://github.com/OpenIntelWireless/itlwm) are required to enable the Wifi chip. This EFI will dynamically load the appropriate kext for macOS Ventura or Sonoma depending on the running kernel. No need to manually replace the kext file when updating your version of macOS. As the Intel Wifi chip does not yet work with the `AirportItlwm.kext` in macOS Sequoia, you'll need to use the `Itlwm.kext` and its companion app [HeliPort](https://github.com/OpenIntelWireless/HeliPort/releases) to connect to a Wifi network. You'll find the latest stable `HeliPort.dmg` in the [Tools folder](https://github.com/jlempen/Surface-Laptop-3-OpenCore/blob/main/Tools/HeliPort.dmg) of this repo. This EFI will dynamically load the `Itlwm.kext` instead of `AirportItlwm.kext` when you boot into macOS Sequoia.
 
+This EFI folder also contains all the kexts needed to enable various Broadcom-based M.2 wireless cards. If you replaced the Intel wireless card with a Broadcom-based card such as the Dell DW1560, Dell DW1830, Dell DW1820A, Lenovo Lite-On WCBN802B, AzureWave AW-CB162NF, Lite-On WCBN808B or Lenovo Foxconn T77H649, simply disable all the Intel wireless and Bluetooth kexts and enable the Broadcom kexts instead. To do so, simply follow [my instructions below](Razer-Blade-15-Advanced-2019-RZ09-0301x-OpenCore#enabling-native-hidpi-display-settings-in-macos).
+
 This repository uses the unofficial OpenCore_NO_ACPI_Build fork of OpenCore by [btwise](https://gitee.com/btwise/OpenCore_NO_ACPI), wich is not endorsed by Acidanthera (the dev team behind OpenCore). The main (and only) difference between this fork and the official OpenCore version is that it allows to prevent ACPI injection (e.g. patches, tables, boot parameters) into other OSes besides macOS.
 
 Windows and Linux should be detected automagically by the OpenCore boot loader even when installed after macOS.
@@ -124,6 +126,25 @@ If you prefer modifying your own firmware, you may find very thorough instructio
 
 ## Enabling native HiDPI display settings in macOS
 To enable native HiDPI settings in the Display Preferences of macOS, download and run the [one-key-hidpi](https://github.com/jlempen/one-key-hidpi) script and select the option `(1) 1920x1080 Display`.
+
+## Replacing the Intel wireless and Bluetooth M.2 card with a Broadcom-based card
+Disable the following kexts in the `config.plist` file:
+```
+itlwm.kext
+AirportItlwm-Sonoma144.kext
+AirportItlwm-Sonoma140.kext
+AirportItlwm-Ventura.kext
+IntelBluetoothFirmware.kext
+IntelBTPatcher.kext
+```
+Enable the following kexts in the `config.plist` file:
+
+```
+AirportBrcmFixup.kext
+AirportBrcmFixup.kext/Contents/PlugIns/AirPortBrcmNIC_Injector.kext
+BrcmFirmwareData.kext
+BrcmPatchRAM3.kext
+```
 
 ## Configuring the RGB color effects of the keyboard
 The RGB color effects of the keyboard may be managed and configured conveniently with the excellent [Razer macOS](https://github.com/1kc/razer-macos) utility.
