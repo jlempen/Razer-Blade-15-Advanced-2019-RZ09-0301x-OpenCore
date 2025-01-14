@@ -147,6 +147,9 @@ BrcmFirmwareData.kext
 BrcmPatchRAM3.kext
 ```
 
+## Fixing the Caps Lock LED
+The Caps Lock LED doesn't work out of the box. To fix it, download and install [Karabiner-Elements](https://karabiner-elements.pqrs.org). Then open the app's Settings and head over to the `Devices` tab and look for your keyboard. Enable the `Manipulate caps lock LED` option and you're done. Make sure Karabiner-Elements starts on system startup.
+
 ## Configuring the RGB color effects of the keyboard
 The RGB color effects of the keyboard may be managed and configured conveniently with the excellent [Razer macOS](https://github.com/stickoking/razer-macos) utility.
 
