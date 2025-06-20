@@ -7,7 +7,7 @@ macOS on the Razer Blade 15 Advanced (2019) RZ09-0301x thanks to [Acidanthera's 
 | Software         | Version                            |
 | ---------------- | ---------------------------------- |
 | Target OS        | Apple macOS 13 Ventura, 14 Sonoma and 15 Sequoia |
-| OpenCore         | [MOD-OC v1.0.3](https://github.com/wjz304/OpenCore_NO_ACPI_Build/releases/download/1.0.3_20b758b/OpenCore-Mod-1.0.3-RELEASE.zip) |
+| OpenCore         | [MOD-OC v1.0.5](https://github.com/wjz304/OpenCore_NO_ACPI_Build/releases/download/1.0.5_b56882c/OpenCore-Mod-1.0.5-RELEASE.zip) |
 | SMBIOS           | MacBookPro16,1 |
 | UEFI Firmware    | [Modified firmware v1.05](https://github.com/jlempen/Razer-Blade-15-Advanced-2019-RZ09-0301x-OpenCore/tree/main/UEFI%20Firmware) |
 | SSD format       | APFS file system, GPT partition table |
@@ -35,7 +35,7 @@ Please be aware that all `PlatformInfo` and `SMBIOS` information was removed fro
 
 `AirportItlwm-Ventura.kext`, `AirportItlwm-Sonoma140.kext` and `AirportItlwm-Sonoma144.kext` from the [OpenIntelWireless repo](https://github.com/OpenIntelWireless/itlwm) are required to enable the Wifi chip. This EFI will dynamically load the appropriate kext for macOS Ventura or Sonoma depending on the running kernel. No need to manually replace the kext file when updating your version of macOS. As the Intel Wifi chip does not yet work with the `AirportItlwm.kext` in macOS Sequoia, you'll need to use the `Itlwm.kext` and its companion app [HeliPort](https://github.com/OpenIntelWireless/HeliPort/releases) to connect to a Wifi network. You'll find the latest stable `HeliPort.dmg` in the [Tools folder](https://github.com/jlempen/Razer-Blade-15-Advanced-2019-RZ09-0301x-OpenCore/blob/main/Tools/HeliPort.dmg) of this repo. This EFI will dynamically load the `Itlwm.kext` instead of `AirportItlwm.kext` when you boot into macOS Sequoia.
 
-This EFI folder also contains all the kexts needed to enable various Broadcom-based M.2 wireless cards. If you replaced the Intel wireless card with a Broadcom-based card such as the Dell DW1560, Dell DW1830, Dell DW1820A, Lenovo Lite-On WCBN802B, AzureWave AW-CB162NF, Lite-On WCBN808B or Lenovo Foxconn T77H649, simply disable all the Intel wireless and Bluetooth kexts and enable the Broadcom kexts instead. To do so, simply follow [my instructions below](https://github.com/jlempen/Razer-Blade-15-Advanced-2019-RZ09-0301x-OpenCore#enabling-native-hidpi-display-settings-in-macos).
+This EFI folder also contains all the kexts needed to enable various Broadcom-based M.2 wireless cards. If you replaced the Intel wireless card with a Broadcom-based card such as the Dell DW1560, Dell DW1830, Dell DW1820A, Lenovo Lite-On WCBN802B, AzureWave AW-CB162NF, Lite-On WCBN808B or Lenovo Foxconn T77H649, simply disable all the Intel wireless and Bluetooth kexts and enable the Broadcom kexts instead. To do so, simply follow [my instructions below](https://github.com/jlempen/Razer-Blade-15-Advanced-2019-RZ09-0301x-OpenCore#replacing-the-intel-wireless-and-bluetooth-m2-card-with-a-broadcom-based-card).
 
 This repository uses the unofficial [OpenCore_NO_ACPI_Build fork of OpenCore by btwise](https://gitee.com/btwise/OpenCore_NO_ACPI), wich is not endorsed by Acidanthera (the dev team behind OpenCore). The main (and only) difference between this fork and the official OpenCore version is that it allows to prevent ACPI injection (e.g. patches, tables, boot parameters) into other OSes besides macOS.
 
