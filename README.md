@@ -81,6 +81,7 @@ Windows and Linux should be detected automagically by the OpenCore boot loader e
 ## What will probably never work
 - [ ] NVIDIA GeForce RTX 2070 Max-Q dGPU (disabled with an SSDT)
 - [ ] HDMI and Mini DisplayPort outputs (hardwired to the NVIDIA dGPU)
+- [ ] External Display output via USB-C (hardwired to the NVIDIA dGPU)
 - [ ] Windows Hello IR camera
 
 ## Modified UEFI Firmware
