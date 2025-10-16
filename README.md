@@ -158,6 +158,9 @@ IO80211FamilyLegacy.kext/Contents/PlugIns/AirPortBrcmNIC.kext
 
 For the Broadcom wireless card to work in macOS Sonoma and Sequoia, you'll also need to download and install the latest version of the [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher/releases). Then launch the patcher and run the `Post-install Root Patch` for modern wireless and reboot when instructed to do so. Your Broadcom wireless card should work now!
 
+> [!IMPORTANT]
+> This last step needs to be repeated after every macOS update!
+
 ## Fixing the Caps Lock LED
 The Caps Lock LED doesn't work out of the box. To fix it, download and install [Karabiner-Elements](https://karabiner-elements.pqrs.org). Then open the app's Settings and head over to the `Devices` tab and look for your keyboard. Enable the `Manipulate caps lock LED` option and you're done. Make sure Karabiner-Elements starts on system startup.
 
