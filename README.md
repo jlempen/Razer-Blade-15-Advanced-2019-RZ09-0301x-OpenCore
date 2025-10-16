@@ -7,7 +7,7 @@ macOS on the Razer Blade 15 Advanced (2019) RZ09-0301x thanks to [Acidanthera's 
 | Software         | Version                            |
 | ---------------- | ---------------------------------- |
 | Target OS        | Apple macOS 13 Ventura, 14 Sonoma and 15 Sequoia |
-| OpenCore         | [MOD-OC v1.0.5](https://github.com/wjz304/OpenCore_NO_ACPI_Build/releases/download/1.0.5_b56882c/OpenCore-Mod-1.0.5-RELEASE.zip) |
+| OpenCore         | [MOD-OC v1.0.6](https://github.com/wjz304/OpenCore_NO_ACPI_Build/releases/download/1.0.6_9cb2b0d/OpenCore-Mod-1.0.6-RELEASE.zip) |
 | SMBIOS           | MacBookPro16,1 |
 | UEFI Firmware    | [Modified firmware v1.05](https://github.com/jlempen/Razer-Blade-15-Advanced-2019-RZ09-0301x-OpenCore/tree/main/UEFI%20Firmware) |
 | SSD format       | APFS file system, GPT partition table |
@@ -147,6 +147,16 @@ AirportBrcmFixup.kext/Contents/PlugIns/AirPortBrcmNIC_Injector.kext
 BrcmFirmwareData.kext
 BrcmPatchRAM3.kext
 ```
+To enable Broadcom wireless support in macOS Sonoma and Sequoia, enable the following kexts as well:
+
+```
+AMFIPass.kext
+IOSkywalkFamily.kext
+IO80211FamilyLegacy.kext
+IO80211FamilyLegacy.kext/Contents/PlugIns/AirPortBrcmNIC.kext
+```
+
+For the Broadcom wireless card to work in macOS Sonoma and Sequoia, you'll also need to download and install the latest version of the [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher/releases). Then launch the patcher and run the `Post-install Root Patch` for modern wireless and reboot when instructed to do so. Your Broadcom wireless card should work now!
 
 ## Fixing the Caps Lock LED
 The Caps Lock LED doesn't work out of the box. To fix it, download and install [Karabiner-Elements](https://karabiner-elements.pqrs.org). Then open the app's Settings and head over to the `Devices` tab and look for your keyboard. Enable the `Manipulate caps lock LED` option and you're done. Make sure Karabiner-Elements starts on system startup.
