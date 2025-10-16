@@ -928,7 +928,7 @@
                     <key>ExecutablePath</key>
                     <string>Contents/MacOS/itlwm</string>
                     <key>MaxKernel</key>
-                    <string>24.99.99</string>
+                    <string></string>
                     <key>MinKernel</key>
                     <string>24.0.0</string>
                     <key>PlistPath</key>
