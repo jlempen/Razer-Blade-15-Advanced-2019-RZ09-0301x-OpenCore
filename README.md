@@ -156,6 +156,8 @@ IO80211FamilyLegacy.kext
 IO80211FamilyLegacy.kext/Contents/PlugIns/AirPortBrcmNIC.kext
 ```
 
+Then head over to `Kernel -> Block` in your `config.plist` file and enable the `com.apple.iokit.IOSkywalkFamily` item.
+
 For the Broadcom wireless card to work in macOS Sonoma and Sequoia, you'll also need to download and install the latest version of the [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher/releases). Then launch the patcher and run the `Post-install Root Patch` for modern wireless and reboot when instructed to do so. Your Broadcom wireless card should work now!
 
 > [!IMPORTANT]
