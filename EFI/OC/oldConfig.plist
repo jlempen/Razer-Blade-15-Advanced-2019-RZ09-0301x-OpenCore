@@ -832,7 +832,7 @@
                     <key>BundlePath</key>
                     <string>AirportBrcmFixup.kext</string>
                     <key>Comment</key>
-                    <string>V2.2.0 | AirportBrcmFixup.kext</string>
+                    <string>V2.1.9 | AirportBrcmFixup.kext</string>
                     <key>Enabled</key>
                     <false/>
                     <key>ExecutablePath</key>
