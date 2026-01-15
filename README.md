@@ -59,6 +59,9 @@ This repository uses the unofficial [OpenCore_NO_ACPI_Build fork of OpenCore by 
 
 Windows and Linux should be detected automagically by the OpenCore boot loader even when installed after macOS.
 
+<details>
+  <summary>Computer Specifications</summary>
+	
 ## Computer Specifications
 | Device           | Hardware                           |
 | ---------------- | ---------------------------------- |
@@ -75,6 +78,10 @@ Windows and Linux should be detected automagically by the OpenCore boot loader e
 | Camera           | 1 MPix 720p HD camera |
 | Keyboard / Trackpad | Per key RGB keyboard and precision glass touchpad |
 | Display          | 240 Hz, 15.6 Inch Full HD, 1920 x 1080 matte screen |
+</details>
+
+<details>
+  <summary>What works</summary>
 
 ## What works
 - [x] CPU power management (`SSDT-PLUG-_SB.PR00.aml`)
@@ -92,21 +99,37 @@ Windows and Linux should be detected automagically by the OpenCore boot loader e
 - [x] Configurable RGB color effects for the keyboard
 - [x] Trackpad with native multi-touch gestures (`SSDT-I2CxConf.aml`, `SSDT-OCGPI0-GPHD.aml`, `SSDT-OCI2C-TPXX-RAZER15.aml`, `SSDT-XOSI.aml`, `VoodooI2C.kext`, `VoodooI2CHID.kext`)
 - [x] Battery percentage and cycle count (`SSDT-BATT-razer15-late2019.aml`, `VirtualSMC.kext`, `SMCBatteryManager.kext`)
+</details>
 
+<details>
+  <summary>What needs some more work</summary>
+	
 ## What needs some more work
 - [ ] Thunderbolt support and hotplug
+</details>
 
+<details>
+  <summary>What will probably never work</summary>
+	
 ## What will probably never work
 - [ ] NVIDIA GeForce RTX 2070 Max-Q dGPU (disabled with an SSDT)
 - [ ] HDMI and Mini DisplayPort outputs (hardwired to the NVIDIA dGPU)
 - [ ] External Display output via USB-C (hardwired to the NVIDIA dGPU)
 - [ ] Windows Hello IR camera
+</details>
 
+<details>
+  <summary>Modified UEFI Firmware</summary>
+	
 ## Modified UEFI Firmware
 In order to take advantage of better CPU power management and graphics acceleration, there are a few settings that need to be unlocked and configured in the UEFI BIOS. The most convenient way to achieve this is to flash the modded firmware found in the [UEFI Firmware folder](https://github.com/jlempen/Razer-Blade-15-Advanced-2019-RZ09-0301x-OpenCore/tree/main/UEFI%20Firmware) and change the required settings in the UEFI BIOS as described below. Instructions on how to flash the modded firmware may be found [in this readme](https://github.com/jlempen/Razer-Blade-15-Advanced-2019-RZ09-0301x-OpenCore/blob/main/UEFI%20Firmware/flashing_firmware.md).
 
 If you prefer modifying your own firmware, you may find very thorough instructions in [stonevil's excellent Razer Blade 15 Advanced early 2019 repository](https://github.com/stonevil/Razer_Blade_Advanced_early_2019_Hackintosh/#bios-unlock).
+</details>
 
+<details>
+  <summary>UEFI BIOS Configuration</summary>
+	
 ## UEFI BIOS Configuration
 * Reboot computer
 * Repeatedly press the ``F1`` or ``DEL`` key to enter the UEFI BIOS configuration menu
@@ -143,10 +166,18 @@ If you prefer modifying your own firmware, you may find very thorough instructio
 	* ``Save and Exit``
 		* Hit ``Save Changes``
 		* Hit ``Save Changes and Reset``
+</details>
 
+<details>
+  <summary>Enabling native HiDPI display settings in macOS</summary>
+	
 ## Enabling native HiDPI display settings in macOS
 To enable native HiDPI settings in the Display Preferences of macOS, download and run the [one-key-hidpi](https://github.com/jlempen/one-key-hidpi) script and select the option `(1) 1920x1080 Display`.
+</details>
 
+<details>
+  <summary>Replacing the Intel wireless and Bluetooth M.2 card with a Broadcom-based card</summary>
+	
 ## Replacing the Intel wireless and Bluetooth M.2 card with a Broadcom-based card
 Disable the following kexts in the `config.plist` file:
 ```
@@ -181,7 +212,11 @@ For the Broadcom wireless card to work in macOS Sonoma and Sequoia, you'll also 
 
 > [!IMPORTANT]
 > This last step needs to be repeated after every macOS update!
+</details>
 
+<details>
+  <summary>Enabling the Intel Wireless Card in macOS Sequoia and Tahoe</summary>
+	
 ## Enabling the Intel Wireless Card in macOS Sequoia and Tahoe
 
 ### Using the AirportItlwm.kext driver and root patching
@@ -233,7 +268,11 @@ Save and close the `config.plist` file and reboot your computer.
 Download and install the latest `HeliPort` Intel WiFi client for `itlwm` from [the OpenIntelWireless project](https://openintelwireless.github.io/HeliPort/#download).
 
 Add the `HeliPort` client to your login items and hide the macOS WiFi icon from the Menu Bar.
+</details>
 
+<details>
+  <summary>Fixing audio on macOS Tahoe</summary>
+	
 ## Fixing audio on macOS Tahoe
 
 ### By root patching
@@ -247,7 +286,11 @@ Before installing the VoodooHDA driver, you need to disable the `AppleALC.kext` 
 Then [grab the latest installer](https://github.com/jlempen/Razer-Blade-15-Advanced-2019-RZ09-0301x-OpenCore/blob/main/Tools/VoodooHDA-Tahoe.pkg) from the Tools folder in my repository, launch the installer and follow the instructions.
 
 Once you're back in macOS Tahoe after a reboot, head over to `System Settings -> Sound -> Output & Input` and select the `Output` tab, then select `Speaker (Analog)` as your sound output device.
+</details>
 
+<details>
+  <summary>Fixing FileVault when upgrading to macOS Tahoe</summary>
+	
 ## Fixing FileVault when upgrading to macOS Tahoe
 If `FileVault` disk encryption is enabled during the upgrade or install of macOS Tahoe, the `FileVault` login window will reject your password and the encrypted disk will remain locked after the first reboot. This is due to Tahoe's APFS filesystem driver not supporting the software `FileVault` disk encryption created with previous versions of macOS.
 
@@ -262,13 +305,25 @@ Save and close the `config.plist` file and restart your computer. The `FileVault
 
 ### Turning off FileVault in the macOS Recovery Console
 Follow the nice instructions [on Jac Timms' website](https://www.ichi.co.uk/blog/removing-file-vault-from-internet-recovery-console).
+</details>
 
+<details>
+  <summary>Fixing the Caps Lock LED</summary>
+	
 ## Fixing the Caps Lock LED
 The Caps Lock LED doesn't work out of the box. To fix it, download and install [Karabiner-Elements](https://karabiner-elements.pqrs.org). Then open the app's Settings and head over to the `Devices` tab and look for your keyboard. Enable the `Manipulate caps lock LED` option and you're done. Make sure Karabiner-Elements starts on system startup.
+</details>
 
+<details>
+  <summary>Configuring the RGB color effects of the keyboard</summary>
+	
 ## Configuring the RGB color effects of the keyboard
 The RGB color effects of the keyboard may be managed and configured conveniently with the excellent [Razer macOS](https://github.com/stickoking/razer-macos) utility.
+</details>
 
+<details>
+  <summary>Undervolting to reduce heat and improve performance</summary>
+	
 ## Undervolting to reduce heat and improve performance
 There are two undervolting tools available for macOS:
 * [Volta](https://volta.garymathews.com)
@@ -333,14 +388,23 @@ I would advise to test the values first in macOS with the `VoltageShift` tool an
 | ``Uncore Voltage Offset`` | -60 mV | -5 mV | -120 mV |
 
 CPU limitations can be very different from one machine to another, so do not use my configuration blindly.
+</details>
 
+<details>
+  <summary>Fixing broken Apple Messages and FaceTime on macOS Sonoma</summary>
+	
 ## Fixing broken Apple Messages and FaceTime on macOS Sonoma
 To fix issues with Apple Messages and FaceTime related to the [Intel Wireless driver](https://github.com/OpenIntelWireless/itlwm) on macOS Sonoma, disable all `AirportItlwm-***.kext` entries under `Kernel -> Add` in your `config.plist` file and use the [itlwm_v2.3.0_stable.kext.zip](https://github.com/OpenIntelWireless/itlwm/releases/download/v2.3.0/itlwm_v2.3.0_stable.kext.zip) and its companion app [HeliPort](https://github.com/OpenIntelWireless/HeliPort/releases/download/v1.5.0/HeliPort.dmg) instead.
 
 The latest version 2.3.0 of `itlwm.kext` is already included in the Kext folder and `config.plist` file.
+</details>
 
+<details>
+  <summary>Related repositories</summary>
+	
 ## Related repositories
 * https://github.com/tylernguyen/razer15-hackintosh
 * https://github.com/stonevil/Razer_Blade_Advanced_early_2019_Hackintosh
 * https://github.com/doubleyoustew/Razer-Blade-15
 * https://github.com/wu-hongjun/Hackintosh-Razer-Blade-RZ09-0301
+</details>
