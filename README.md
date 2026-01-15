@@ -187,7 +187,9 @@ AirportItlwm-Sonoma144.kext
 AirportItlwm-Sonoma140.kext
 AirportItlwm-Ventura.kext
 IntelBluetoothFirmware.kext
+IntelBluetoothFirmware-Sequoia-Tahoe.kext
 IntelBTPatcher.kext
+IntelBTPatcher-Sequoia-Tahoe.kext
 ```
 Enable the following kexts in the `config.plist` file:
 
@@ -197,18 +199,10 @@ AirportBrcmFixup.kext/Contents/PlugIns/AirPortBrcmNIC_Injector.kext
 BrcmFirmwareData.kext
 BrcmPatchRAM3.kext
 ```
-To enable Broadcom wireless support in macOS Sonoma and Sequoia, enable the following kexts as well:
 
-```
-AMFIPass.kext
-IOSkywalkFamily.kext
-IO80211FamilyLegacy.kext
-IO80211FamilyLegacy.kext/Contents/PlugIns/AirPortBrcmNIC.kext
-```
+For the Broadcom wireless card to work in macOS Sonoma and Sequoia, you'll also need to download and install the latest version of the [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher/releases). Then launch the patcher and run the `Post-install Root Patch` for modern wireless and reboot when instructed to do so. Your Broadcom wireless card should work now! 
 
-Then head over to `Kernel -> Block` in your `config.plist` file and enable the `com.apple.iokit.IOSkywalkFamily` item.
-
-For the Broadcom wireless card to work in macOS Sonoma and Sequoia, you'll also need to download and install the latest version of the [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher/releases). Then launch the patcher and run the `Post-install Root Patch` for modern wireless and reboot when instructed to do so. Your Broadcom wireless card should work now!
+On macOS Tahoe, use the latest version of [Laobamac's OCLP-Mod Patcher](https://github.com/laobamac/OCLP-Mod/releases), which is a fork of the OpenCore Legacy Patcher which works on macOS Tahoe. Refer to the below screenshots and instructions for Intel Wireless Cards to apply the root patches on macOS Tahoe.
 
 > [!IMPORTANT]
 > This last step needs to be repeated after every macOS update!
